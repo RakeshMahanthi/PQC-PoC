@@ -114,8 +114,6 @@ docker build -t pqc-nginx .
 # Run the container, mounting certs into the expected path
 # Adjust paths if your Dockerfile/Nginx expects a different location
 docker run --rm -p 443:443 \
-  -v $(pwd)/server.crt:/etc/nginx/ssl/server.crt:ro \
-  -v $(pwd)/server.key:/etc/nginx/ssl/server.key:ro \
   pqc-nginx
 ```
 
@@ -123,8 +121,6 @@ If you want to run the container in the background:
 
 ```bash
 docker run -d --name pqc-nginx -p 443:443 \
-  -v $(pwd)/server.crt:/etc/nginx/ssl/server.crt:ro \
-  -v $(pwd)/server.key:/etc/nginx/ssl/server.key:ro \
   pqc-nginx
 ```
 
